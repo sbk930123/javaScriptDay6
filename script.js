@@ -1,9 +1,22 @@
 const student = {
   firstName: 'Monica',
-  //Getter
-  get getName() {
+  // Getter
+  get heroName() {
     return this.firstName;
+  },
+
+  // setter
+  set changeName(newName) {
+    this.firstName = newName;
   }
 }
 
-console.log(student.getName());
+// error
+console.log(student.heroName);
+// error
+// student.changeName('Amy');
+student.changeName = 'Amy';
+console.log(student.heroName);
+
+student.heroName = 'tom'; // getter로는 모든 값을 변경할 수 없음
+console.log(student.heroName); // 'Amy' 
